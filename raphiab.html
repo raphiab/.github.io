@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<head>
+<script src="/assets/jquery.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Hanalei+Fill" rel="stylesheet">
+<style>
+body {
+  font-family: 'Hanalei Fill', cursive;
+  margin: 0 auto;
+  max-width: 500px;
+  background: pink;
+  
+}
+div {
+  height: 350px;
+  background-size: cover;
+  position: relative;
+  margin: 40px 0 0 0;
+  border-radius: 12px;
+  
+}
+h1 {
+  text-align: center;
+  font-size: 40px;
+  color: red;
+  margin: 60px 0 0 0;
+}
+ul {
+   text-align: center;
+   padding: 10px;
+    background: rgba(200,8,7,0.5);
+}
+li {
+      display: inline;
+      padding: 0px 10px 0px 10px;
+  }
+h2 {
+  text-align: center;
+  color: purple;
+  margin: 0px 0 70px 0;
+  font-size: 20px;
+}
+p {
+  color: red;
+  background: rgba(255,0,255,0.1);
+  padding: 10px;
+  line-height: 28px;
+  text-align: justify;
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  height: 30px;
+  transition: height .5s;
+  -webkit-transition: height .5s;
+  -moz-transition: height .5s;
+}
+
+small {
+  opacity: 0;
+}
+
+.show-description p {
+  height: 150px;
+}
+
+.show-description small {
+  opacity: 1;
+}
+
+.Brunch{
+  background-image: url("https://www.thedailymeal.com/sites/default/files/2018/06/04/copy/ihopomelette_yelp.jpg");
+  background-size: 100% 100%;
+  height: 300px;
+}
+.Cake {
+  background-image: url("https://media-cdn.tripadvisor.com/media/photo-s/06/a7/19/0e/the-sugar-factory.jpg");
+  background-size: 100% 100%;
+  height: 300px;
+}
+.A  {
+  background-image: url("https://sauconvalleymanor.com/wp-content/uploads/2015/12/red-lobster-introduces-bigger-better-shrimp.jpg");
+  background-size: 100% 100%;
+  height: 300px;
+}
+.Cost {
+  float: right;
+}
+@media (max-width: 500px) {
+  h1 {
+    font-size: 50px;
+    margin-top: 20px;
+    line-height: 40px;
+  }
+  h2 {
+    font-size: 20px;
+    margin: 20px 0 30px 0;
+  }
+  div {
+    margin: 20px 12px 0 12px;
+  }
+  p {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  small {
+    font-size: 16px;
+  }
+}
+
+</style>
+
+</head>
+
+<body>
+<ul>
+      <li><button onclick=appetizers()>Fashion Week</a></li>
+      <li><button onclick=desserts()>Music Videos</a></li>
+      <li><button onclick=entrees()>Formal Wear</a></li>
+    </ul>
+  
+<h1>Insights on Nicki Minaj </h1>
+<h2>a fashion website</h2>
+<div id="nicki"></div>
+
+
+<script>
+appetizersImages = [
+    'url("http://www.celebsfirst.com/wp-content/uploads/2018/09/nicki-minaj-rocks-an-all-fendi-ensemble-as-she-arrives-for-the-fendi-show-during-milan-fashion-week-in-milan-italy-200918_1.jpg")',
+    'url("https://celebmafia.com/wp-content/uploads/2017/09/nicki-minaj-oscar-de-la-renta-show-in-new-york-city-09-11-2017-5.jpg")',
+  'url("https://pmchollywoodlife.files.wordpress.com/2018/09/icons-party-03.jpg?w=1000")',   
+]
+
+dessertsImages = [
+  'url("https://i2.wp.com/www.magic1037.com/wp-content/uploads/2018/10/jason-derulo-goodbye-2.jpg?fit=1164%2C759&ssl=1")',
+  'url("https://cosmopolitan.fetcha.co.za/wp-content/uploads/2018/07/36641122_242320413232898_2466876481490386944_n.jpg")',
+  'url("https://media1.popsugar-assets.com/files/thumbor/kqliMmMirLdsMCjUBQMbDQLi33k/fit-in/1200x630/filters:format_auto-!!-:strip_icc-!!-:fill-!white!-/2018/09/11/674/n/1922153/d8535279ff88bfd9_Screen_Shot_2018-09-11_at_10.54.00_AM/i/Gen-Z-Yellow.png")',
+]
+
+entreesImages = [
+  'url("https://images.britcdn.com/wp-content/uploads/2017/08/nicki-minaj.jpg?w=1000&auto=format")',
+  'url("https://pmcfootwearnews.files.wordpress.com/2018/09/nicki.jpg")',
+  'url("https://www.bet.com/style/beauty/2018/08/30/nicki-minaj-claims-it-s-all-her-hair/_jcr_content/bodycopycontainer/embedded_image/image.custom1200x1667.dimg/__1535653805325__1535653790696/083018-style-beauty-nicki-minaj-claims-it-s-all-her-hair.jpg")',
+]
+
+appetizersDivs = [
+  '<div class="item"><p>Milan Fashion Week 2018 <span class="Cost"></span><br /><small>Here she rocked a Fendi ensemble for the Milan show in Italy. As she says "Fendi Prints"</small></p></div>',
+
+'<div class="item"><p>Oscar De La Renta party<span class="Cost"></span><br /><small>She wore this ensemble accompanied by a fur coat to the Oscar De La Renta Party in New York.</small></p></div>',
+  
+'<div class="item"><p>Harper Bazaar 2018 <span class="Cost"></span><br /><small>Legendary for a queen herself. She wore this look tot he Harper Bazaar party in 2018. Do you see the laid blonde wig. okurrr </small></p></div>',
+]
+dessertsDivs = [
+  '<div class="item"><p>Goodbye Music Video<span class="Cost"></span><br /><small>This was the video that she did with Jason Derulo, as you can see she rocked the pink bob perfectly with the black dress. And cleavge looks perfectly</small></p></div>',
+
+'<div class="item"><p>Bed Music Video<span class="Cost"></span><br /><small>This video was everything, from the wigs along with the costumes changes and the scenery</small></p></div>',
+  
+'<div class="item"><p>Barbie Dreams Music Video <span class="Cost"></span><br /><small>Nah the costume changes was literally eberythung, like her wigs blended perfectly with her looks and the makeup was on point. </small></p></div>',
+]
+entreesDivs = [
+  '<div class="item"><p>MTV VMA 2017<span class="Cost"></span><br /><small>This was the video that she did with Jason Derulo, as you can see she rocked the pink bob perfectly with the black dress. And cleavge looks perfectly</small></p></div>',
+
+'<div class="item"><p>Milan Fashion Show 2018<span class="Cost"></span><br /><small>This video was everything, from the wigs along with the costumes changes and the scenery</small></p></div>',
+  
+'<div class="item"><p>MTV VMA AWARDS 2016 <span class="Cost"></span><br /><small>Nah the costume changes was literally eberythung, like her wigs blended perfectly with her looks and the makeup was on point. </small></p></div>',
+]
+  
+  function appetizers() {
+    //alert("ouuu food!!!!")
+    fashion = document.getElementById("nicki")
+    fashion.innerHTML = ''
+    fashion.innerHTML += appetizersDivs[0]
+    fashion.innerHTML += appetizersDivs[1]
+    fashion.innerHTML += appetizersDivs[2]
+    items = document.getElementsByClassName("item")
+    for (i=0; i<3; i=i+1) {
+      items[i].style.background = appetizersImages[i]
+      items[i].style.backgroundSize = '100% 100%'
+    }
+  }
+  
+  function desserts() {
+    //alert ("yeaww!!!")
+    fashion = document.getElementById("nicki")
+    fashion.innerHTML = ''
+    fashion.innerHTML += dessertsDivs[0]
+    fashion.innerHTML += dessertsDivs[1]
+    fashion.innerHTML += dessertsDivs[2]
+    items = document.getElementsByClassName("item")
+    for (i=0; i<3; i=i+1) {
+      items[i].style.background = dessertsImages[i]
+      items[i].style.backgroundSize = '100% 100%'
+    }
+  }
+  
+  function entrees() {
+    //alert("oh wow!!!!")
+    fashion = document.getElementById("nicki")
+    fashion.innerHTML = ''
+    fashion.innerHTML += entreesDivs[0]
+    fashion.innerHTML += entreesDivs[1]
+    fashion.innerHTML += entreesDivs[2]
+    items = document.getElementsByClassName("item")
+    for (i=0; i<3; i=i+1) {
+      items[i].style.background = entreesImages[i]
+      items[i].style.backgroundSize = '100% 100%'
+    }
+  }
+  
+  
+
+  $('div').on('click', function() {
+      $(this).toggleClass('show-description');
+  });
+</script>
+
+</body>
