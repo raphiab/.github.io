@@ -142,25 +142,25 @@ entreesImages = [
 ]
 
 appetizersDivs = [
-  '<div class="item"><p>Milan Fashion Week 2018 <span class="Cost"></span><br /><small>Here she rocked a Fendi ensemble for the Milan show in Italy. As she says "Fendi Prints"</small></p></div>',
+  '<div class="item" onclick=this.classList.toggle("show-description")><p>Milan Fashion Week 2018 <span class="Cost"></span><br /><small>Here she rocked a Fendi ensemble for the Milan show in Italy. As she says "Fendi Prints"</small></p></div>',
 
-'<div class="item"><p>Oscar De La Renta party<span class="Cost"></span><br /><small>She wore this ensemble accompanied by a fur coat to the Oscar De La Renta Party in New York.</small></p></div>',
+'<div class="item" onclick=this.classList.toggle("show-description")><p>Oscar De La Renta party<span class="Cost"></span><br /><small>She wore this ensemble accompanied by a fur coat to the Oscar De La Renta Party in New York.</small></p></div>',
   
-'<div class="item"><p>Harper Bazaar 2018 <span class="Cost"></span><br /><small>Legendary for a queen herself. She wore this look tot he Harper Bazaar party in 2018. Do you see the laid blonde wig. okurrr </small></p></div>',
+'<div class="item" onclick=this.classList.toggle("show-description")><p>Harper Bazaar 2018 <span class="Cost"></span><br /><small>Legendary for a queen herself. She wore this look tot he Harper Bazaar party in 2018. Do you see the laid blonde wig. okurrr </small></p></div>',
 ]
 dessertsDivs = [
-  '<div class="item"><p>Goodbye Music Video<span class="Cost"></span><br /><small>This was the video that she did with Jason Derulo, as you can see she rocked the pink bob perfectly with the black dress. And cleavge looks perfectly</small></p></div>',
+  '<div class="item" onclick=this.classList.toggle("show-description")><p>Goodbye Music Video<span class="Cost"></span><br /><small>This was the video that she did with Jason Derulo, as you can see she rocked the pink bob perfectly with the black dress. And cleavge looks perfectly</small></p></div>',
 
-'<div class="item"><p>Bed Music Video<span class="Cost"></span><br /><small>This video was everything, from the wigs along with the costumes changes and the scenery</small></p></div>',
+'<div class="item" onclick=this.classList.toggle("show-description")><p>Bed Music Video<span class="Cost"></span><br /><small>This video was everything, from the wigs along with the costumes changes and the scenery</small></p></div>',
   
-'<div class="item"><p>Barbie Dreams Music Video <span class="Cost"></span><br /><small>Nah the costume changes was literally eberythung, like her wigs blended perfectly with her looks and the makeup was on point. </small></p></div>',
+'<div class="item" onclick=this.classList.toggle("show-description")><p>Barbie Dreams Music Video <span class="Cost"></span><br /><small>Nah the costume changes was literally eberythung, like her wigs blended perfectly with her looks and the makeup was on point. </small></p></div>',
 ]
 entreesDivs = [
-  '<div class="item"><p>MTV VMA 2017<span class="Cost"></span><br /><small>This was the video that she did with Jason Derulo, as you can see she rocked the pink bob perfectly with the black dress. And cleavge looks perfectly</small></p></div>',
+  '<div class="item" onclick=this.classList.toggle("show-description")><p>MTV VMA 2017<span class="Cost"></span><br /><small>This was the video that she did with Jason Derulo, as you can see she rocked the pink bob perfectly with the black dress. And cleavge looks perfectly</small></p></div>',
 
-'<div class="item"><p>Milan Fashion Show 2018<span class="Cost"></span><br /><small>This video was everything, from the wigs along with the costumes changes and the scenery</small></p></div>',
+'<div class="item" onclick=this.classList.toggle("show-description")><p>Milan Fashion Show 2018<span class="Cost"></span><br /><small>This video was everything, from the wigs along with the costumes changes and the scenery</small></p></div>',
   
-'<div class="item"><p>MTV VMA AWARDS 2016 <span class="Cost"></span><br /><small>Nah the costume changes was literally eberythung, like her wigs blended perfectly with her looks and the makeup was on point. </small></p></div>',
+'<div class="item" onclick=this.classList.toggle("show-description")><p>MTV VMA AWARDS 2016 <span class="Cost"></span><br /><small>Nah the costume changes was literally eberythung, like her wigs blended perfectly with her looks and the makeup was on point. </small></p></div>',
 ]
   
   function appetizers() {
@@ -207,9 +207,8 @@ entreesDivs = [
   
   
 
-  $('div').on('click', function() {
-      $(this).toggleClass('show-description');
-  });
+  
+
 </script>
 
 </body>
